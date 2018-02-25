@@ -5,9 +5,4 @@ echo "Initializing graph repository..."
 
 cd graph
 /root/.env/bin/python /root/graph/init.py
-
-
-
-
-
-
+/root/.env/bin/python /root/fountain/init.py

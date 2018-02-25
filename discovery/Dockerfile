@@ -8,6 +8,7 @@ RUN .env/bin/pip install git+https://github.com/oeg-upm/agora-wot.git
 RUN .env/bin/pip install git+https://github.com/oeg-upm/agora-gw.git
 
 ADD graph/ graph/
+ADD fountain/ fountain/
 
 # Configure runit
 ADD ./my_init.d/ /etc/my_init.d/

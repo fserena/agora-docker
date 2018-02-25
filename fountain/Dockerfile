@@ -8,6 +8,7 @@ ADD fountain.py fountain.py
 
 # Configure runit
 ADD ./my_init.d/ /etc/my_init.d/
+RUN find /etc/my_init.d/ -type f -iname "*.sh" -exec chmod +x {} \;
 
 ONBUILD ADD ./my_init.d/ /etc/my_init.d/
 
