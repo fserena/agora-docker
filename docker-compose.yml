@@ -1,26 +1,20 @@
 version: '3'
 services:
-  redis:
-    image: redis
   fountain:
     build: fountain
     ports: 
-      - "5000"
-    environment:
-      - FOUNTAIN_DB_HOST=redis
+      - "5001:80"
   discovery:
     build: discovery
-#    ports:
-#      - "8000:8000"
     environment:
       - QUERY_CACHE_HOST=redis
       - SPARQL_HOST=http://graph:7200/repositories/tds
-      - REPOSITORY_BASE=http://vicinity.eu/data/
+      - REPOSITORY_BASE=http://agora.org/data/
       - UPDATE_HOST=http://graph:7200/repositories/tds/statements
-      - EXTENSION_BASE=http://vicinity.eu/extensions/
+      - EXTENSION_BASE=http://agora.org/extensions/
       - FOUNTAIN_HOST=fountain
-      - FOUNTAIN_PORT=5000
-      - API_PORT=8000
+      - FOUNTAIN_PORT=80
+      - API_PORT=80
       - TERM=xterm
   graph:
     image: dhlabbasel/graphdb-free

@@ -1,11 +1,11 @@
 FROM fserena/python-base:latest
-MAINTAINER <fserena@fi.upm.es>
+LABEL author="Fernando Serena"
 
 WORKDIR /root
 
-RUN .env/bin/pip install git+https://github.com/oeg-upm/agora-py.git
-RUN .env/bin/pip install git+https://github.com/oeg-upm/agora-wot.git
-RUN .env/bin/pip install git+https://github.com/oeg-upm/agora-gw.git
+RUN .env/bin/pip install git+https://github.com/fserena/agora-py.git
+RUN .env/bin/pip install git+https://github.com/fserena/agora-wot.git
+RUN .env/bin/pip install git+https://github.com/fserena/agora-gw.git
 
 ADD graph/ graph/
 ADD fountain/ fountain/

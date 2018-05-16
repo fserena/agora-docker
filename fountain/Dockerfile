@@ -1,9 +1,9 @@
 FROM fserena/python-base:latest
-MAINTAINER <fserena@fi.upm.es>
+LABEL author="Fernando Serena"
 
 WORKDIR /root
 
-RUN .env/bin/pip install git+https://github.com/oeg-upm/agora-py.git
+RUN .env/bin/pip install git+https://github.com/fserena/agora-py.git
 ADD fountain.py fountain.py
 
 # Configure runit

@@ -6,7 +6,7 @@ import os
 
 setup_logging(logging.DEBUG)
 
-API_PORT = int(os.environ.get('API_PORT', 5000))
+API_PORT = int(os.environ.get('API_PORT', 80))
 
 try:
 	agora = Agora(persist_mode=True, base='knowledge', path='fountain', redis_file='fountain.db')
